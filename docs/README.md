@@ -21,6 +21,10 @@ Documentação obrigatória do produto, conforme Skill 01 (Produto e Estratégia
 
 A documentação de arquitetura (diagrama, ER, ADRs, migrações, APIs, backup etc.) está em [`arquitetura/`](arquitetura/README.md).
 
+## Documentação de design (Skill 03)
+
+Os 10 documentos de design (direção de arte, identidade, tokens, design system, navegação, wireframes, protótipos, responsividade, acessibilidade) estão em [`design/`](design/README.md).
+
 ## Regras de uso
 
 - Nenhum documento pode conter dados de mercado, concorrentes ou clientes apresentados como confirmados sem fonte identificada.
