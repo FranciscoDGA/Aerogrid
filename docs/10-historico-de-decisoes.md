@@ -43,6 +43,18 @@
 - **Justificativa:** O fundador não é especialista aeronáutico; a base documental orienta as demais skills (engenharia, segurança, UX) e evita construir errado.
 - **Decisor:** fundador + Skill 01.
 
+## D-007 — Não usar "integração oficial" como diferencial de marketing
+- **Data:** 2026-11-23
+- **Decisão:** O AeroGrid não alegará integração com ANAC, DECEA, SARPAS ou BR-UTM, nem insinuará parceria/credenciamento oficial, mesmo que concorrentes aleguem tais integrações.
+- **Justificativa:** Alegações de terceiros não foram verificadas e não nos autorizam a repeti-las (princípios 3 e 6 da Skill 01). Diferenciação deverá vir de usabilidade, preço e suporte — não de suposta oficialidade.
+- **Origem:** pesquisa de mercado do documento 04.
+
+## D-008 — Foco do MVP fora do agronegócio
+- **Data:** 2026-11-23
+- **Decisão:** Não disputar o segmento de pulverização agrícola (relatório MAPA) no MVP; priorizar topografia/agrimensura, consultoria ambiental e prestadores de serviço no Pará.
+- **Justificativa:** o mercado brasileiro de software já é denso e maduro em agro (4+ concorrentes com relatório MAPA); o segmento não-agro não mostrou oferta declarada na pesquisa (lacuna L1 do documento 04).
+- **Condicional:** validação nas entrevistas (etapa 2). Se os entrevistados demonstrarem demanda agro maior, revisar.
+
 ---
 
 **Formato para novas entradas:** `D-XXX — Título` / Data / Decisão / Justificativa / Alternativas descartadas / Condicional (se houver).

@@ -56,7 +56,18 @@
 | Interessados em piloto | 3–5 | Interesse verbal ≠ intenção de compra |
 | Primeiros clientes pagantes | 3 | O único sinal forte de validação |
 
-## 5. Como registrar evidências
+## 5. Evidências de pesquisa de mercado (23/11/2026 — ver documento 04)
+
+| Data | Fonte | Tipo | Trecho/resumo | Impacto |
+|------|-------|------|---------------|---------|
+| 23/11/2026 | Sites de 7 concorrentes brasileiros | Fonte publicada | Todos focam em agronegócio/pulverização (relatório MAPA); nenhum declara foco em topografia/inspeção/consultoria | **Fortalece** S1/S4 parcialmente; **sustenta a lacuna L1** (segmento não-agro pode estar desassistido) |
+| 23/11/2026 | Páginas de preços BR | Fonte publicada | Preços publicados de R$ 79,90 a R$ 597/mês | **Enfraquece** P3/P4? Nosso R$ 59 hipotético está abaixo de todo preço publicado — pode ser entrada acessível ou subpreço; testar |
+| 23/11/2026 | Lojas de apps (Aloft) | Avaliações públicas | Aloft Air Control: 3,2/5 com reclamações de instabilidade, migração e cobrança surpresa | Evidência **indireta** de que ferramentas estabelecidas insatisfazem; não substitui entrevistas no Brasil |
+| 23/11/2026 | Fóruns internacionais (2023) | Relato de usuários | Operadores pequenos ainda usam planilhas mesmo avaliando plataformas | Evidência **fraca/indireta** para H7; não prova o caso Pará |
+
+**Nenhuma hipótese de problema (H1–H11) foi confirmada por estas fontes.** Confirmação exige entrevistas (etapa 2 do plano do documento 03).
+
+## 6. Como registrar evidências
 
 Para cada nova evidência, adicionar uma linha com:
 

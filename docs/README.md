@@ -8,8 +8,8 @@ Documentação obrigatória do produto, conforme Skill 01 (Produto e Estratégia
 |---|-----------|---------|--------|
 | 1 | Visão do produto | `01-visao-do-produto.md` | Criado |
 | 2 | Requisitos | `02-requisitos-mvp.md` | Criado |
-| 3 | Perfil dos clientes | `03-perfil-dos-clientes.md` | Pendente (requer pesquisa) |
-| 4 | Mapa de concorrentes | `04-mapa-de-concorrentes.md` | Pendente (requer pesquisa) |
+| 3 | Perfil dos clientes | `03-perfil-dos-clientes.md` | Criado (hipóteses — pendente de entrevistas) |
+| 4 | Mapa de concorrentes | `04-mapa-de-concorrentes.md` | Criado (pesquisa de 23/11/2026) |
 | 5 | Roadmap | `05-roadmap.md` | Pendente |
 | 6 | Backlog priorizado | `06-backlog-priorizado.md` | Pendente |
 | 7 | Critérios de aceitação | `07-criterios-de-aceitacao.md` | Pendente |
