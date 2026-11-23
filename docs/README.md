@@ -17,6 +17,10 @@ Documentação obrigatória do produto, conforme Skill 01 (Produto e Estratégia
 | 9 | Registro de hipóteses e evidências | `09-registro-de-hipoteses.md` | Criado |
 | 10 | Histórico de decisões estratégicas | `10-historico-de-decisoes.md` | Criado |
 
+## Documentação técnica (Skill 02)
+
+A documentação de arquitetura (diagrama, ER, ADRs, migrações, APIs, backup etc.) está em [`arquitetura/`](arquitetura/README.md).
+
 ## Regras de uso
 
 - Nenhum documento pode conter dados de mercado, concorrentes ou clientes apresentados como confirmados sem fonte identificada.
