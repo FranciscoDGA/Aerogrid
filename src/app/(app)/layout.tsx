@@ -29,7 +29,7 @@ export default async function AppLayout({
       <header className="border-b border-gray-200 bg-white">
         <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-4">
           <div className="flex items-center gap-3">
-            <Logo size={28} />
+            <Logo size={28} href="/painel" />
             <span className="hidden text-sm text-gray-500 sm:inline">
               {org.name}
             </span>

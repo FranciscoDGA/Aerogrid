@@ -1,6 +1,12 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 
-export type ButtonVariant = "primary" | "secondary" | "danger" | "ghost";
+export type ButtonVariant =
+  | "primary"
+  | "secondary"
+  | "danger"
+  | "ghost"
+  | "light"
+  | "outlineLight";
 export type ButtonSize = "sm" | "md" | "lg";
 
 const variantClasses: Record<ButtonVariant, string> = {
@@ -10,6 +16,12 @@ const variantClasses: Record<ButtonVariant, string> = {
     "border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 disabled:text-gray-300",
   danger: "bg-danger text-white hover:brightness-90 disabled:opacity-50",
   ghost: "text-gray-700 hover:bg-gray-100 disabled:text-gray-300",
+  // Uso sobre fundo escuro (hero/CTA da landing) — evita conflito de
+  // sobrescrever text-white/bg-white de outras variantes.
+  light:
+    "bg-white text-brand-800 hover:bg-brand-50 disabled:bg-brand-200 disabled:text-brand-400",
+  outlineLight:
+    "border border-white/40 bg-transparent text-white hover:bg-white/10 disabled:opacity-50",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {

@@ -33,8 +33,11 @@
   /* Semânticas — nunca usadas com semântica aeronáutica (doc 08 Skill 01) */
   --color-success: #16a34a;
   --color-success-bg: #ecfdf3;
+  /* Versões escuras para TEXTO pequeno sobre as backgrounds acima (AA ≥ 4.5:1) */
+  --color-success-700: #15803d;
   --color-warning: #d97706;
   --color-warning-bg: #fef6e7;
+  --color-warning-700: #b45309;
   --color-danger: #dc2626;
   --color-danger-bg: #feecec;
 }

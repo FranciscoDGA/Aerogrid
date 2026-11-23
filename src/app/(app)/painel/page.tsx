@@ -84,7 +84,7 @@ export default async function PainelPage() {
               Não foi possível carregar os membros.
             </p>
             <Link
-              href="/"
+              href="/painel"
               className="mt-2 inline-block text-sm font-medium text-brand-600 hover:underline"
             >
               Tentar novamente

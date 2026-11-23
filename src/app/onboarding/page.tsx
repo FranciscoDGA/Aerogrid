@@ -13,7 +13,7 @@ export default async function OnboardingPage() {
 
   if (!user) redirect("/login");
 
-  if (await hasActiveOrganization()) redirect("/");
+  if (await hasActiveOrganization()) redirect("/painel");
 
   return (
     <main className="flex min-h-screen items-center justify-center p-6">

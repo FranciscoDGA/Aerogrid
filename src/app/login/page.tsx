@@ -39,7 +39,7 @@ export default function LoginPage() {
         setCarregando(false);
         return;
       }
-      router.push("/");
+      router.push("/painel");
       router.refresh();
       return;
     }

@@ -7,9 +7,11 @@ import Link from "next/link";
 export function Logo({
   size = 28,
   withWordmark = true,
+  href = "/",
 }: {
   size?: number;
   withWordmark?: boolean;
+  href?: string;
 }) {
   return (
     <span className="inline-flex items-center gap-2">
@@ -42,7 +44,7 @@ export function Logo({
       </svg>
       {withWordmark && (
         <Link
-          href="/"
+          href={href}
           className="text-lg font-semibold tracking-tight text-brand-800"
         >
           AeroGrid

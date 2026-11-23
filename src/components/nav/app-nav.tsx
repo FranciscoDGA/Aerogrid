@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const LINKS = [
-  { href: "/", label: "Painel" },
+  { href: "/painel", label: "Painel" },
   { href: "/clientes", label: "Clientes" },
   { href: "/drones", label: "Drones" },
   { href: "/operadores", label: "Operadores" },
@@ -26,8 +26,8 @@ export function AppNav() {
       <div className="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-4 py-1.5">
         {LINKS.map((link) => {
           const active =
-            link.href === "/"
-              ? pathname === "/"
+            link.href === "/painel"
+              ? pathname === "/painel"
               : pathname.startsWith(link.href);
           return (
             <Link

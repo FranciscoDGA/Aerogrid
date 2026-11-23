@@ -48,5 +48,5 @@ export async function createOrganization(
     };
   }
 
-  redirect("/");
+  redirect("/painel");
 }
