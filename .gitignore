@@ -25,5 +25,8 @@ coverage/
 # logs
 *.log
 
+# capturas temporarias da raiz
+Captura de tela*.png
+
 .vercel
 .env*

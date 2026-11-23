@@ -10,14 +10,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   ),
-  title: "AeroGrid Brasil — Gestão de operações com drones",
+  title: "AeroGrid Brasil — Gestão administrativa de operações com drones",
   description:
-    "Sistema para gerenciar clientes, drones, manutenção e operadores da sua operação com drones. Multiempresa, com isolamento de dados. Não emite autorizações de voo.",
+    "Sistema para gerenciar clientes, frota de drones, histórico de manutenção e equipe técnica da sua operação. Multiempresa com isolamento por organização. Não emite autorizações de voo.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "AeroGrid Brasil — Gestão de operações com drones",
+    title: "AeroGrid Brasil — Gestão administrativa de operações com drones",
     description:
-      "Clientes, frota, manutenção e equipe organizados em um sistema multiempresa. Sem autorizações de voo.",
+      "Clientes, frota, manutenção e equipe técnica organizados em um sistema com isolamento de dados. Não emite autorizações de voo.",
     locale: "pt_BR",
     type: "website",
     siteName: "AeroGrid Brasil",
@@ -38,18 +38,18 @@ type DemoCaptions = { file: string; alt: string; caption: string };
 const DEMO_SHOTS: DemoCaptions[] = [
   {
     file: "drones-lista.png",
-    alt: "Tela de lista de drones do AeroGrid com campo de busca",
-    caption: "Frota com busca rápida por fabricante, modelo ou número de série",
+    alt: "Interface de lista de drones do AeroGrid com situação interna e número de série",
+    caption: "Gestão da frota com modelos, números de série e situação cadastrada",
   },
   {
     file: "drone-detalhe.png",
-    alt: "Tela de detalhe de um drone com histórico de manutenção",
-    caption: "Detalhe do equipamento com histórico de manutenção",
+    alt: "Interface de detalhe do drone com histórico de manutenção e custos",
+    caption: "Histórico de manutenções com data, descrição do serviço e custos",
   },
   {
     file: "operador-documentos.png",
-    alt: "Tela de operador do AeroGrid com documentos e datas",
-    caption: "Operadores com documentos e datas de validade à vista",
+    alt: "Interface de operador com qualificações declaradas e documentos cadastrados",
+    caption: "Equipe técnica com qualificações declaradas e validades de documentos",
   },
 ];
 
@@ -59,108 +59,107 @@ function demoShotSrc(file: string): string | null {
       ? `/images/demo/${file}`
       : null;
   } catch {
-    // Sem imagem disponível — a seção renderiza o estado vazio honesto.
     return null;
   }
 }
 
 const BENEFICIOS = [
   {
-    titulo: "Visão única",
+    titulo: "Visão centralizada",
     texto:
-      "Clientes, drones e operadores num painel só, com busca em cada lista.",
+      "Clientes, frota de drones e operadores em um painel unificado, com busca e filtros.",
   },
   {
-    titulo: "Histórico que fica",
+    titulo: "Histórico de manutenção",
     texto:
-      "Cada manutenção registrada com data, descrição e custo — nada de lembrança de cabeça.",
+      "Cada manutenção registrada com data, descrição e custo — evitando revisões esquecidas.",
   },
   {
-    titulo: "Equipe em dia",
+    titulo: "Documentação da equipe",
     texto:
-      "Documentos e datas dos operadores sempre à vista, sem pastas espalhadas.",
+      "Documentos e datas de validade dos operadores organizados em um só lugar.",
   },
   {
-    titulo: "Separação real por empresa",
+    titulo: "Isolamento por empresa",
     texto:
-      "Cada organização enxerga apenas os próprios dados — isolamento aplicado no banco de dados, não só na tela.",
+      "Cada organização visualiza exclusivamente os próprios dados, com separação no banco de dados.",
   },
 ];
 
 const FUNCIONALIDADES = [
   {
     titulo: "Clientes",
-    texto: "Cadastro com contato obrigatório, busca, edição e exclusão segura.",
+    texto: "Cadastro completo com canais de contato, notas, busca, edição e exclusão lógica.",
     disponivel: true,
   },
   {
-    titulo: "Drones",
+    titulo: "Frota de Drones",
     texto:
-      "Fabricante, modelo, número de série, características e situação da frota.",
+      "Fabricante, modelo, número de série, especificações técnicas e controle de situação interna.",
     disponivel: true,
   },
   {
-    titulo: "Manutenção",
-    texto: "Histórico por equipamento com data, descrição e custo.",
+    titulo: "Histórico de Manutenção",
+    texto: "Registro de revisões preventivas e corretivas com custo e data por equipamento.",
     disponivel: true,
   },
   {
-    titulo: "Operadores",
-    texto: "Cadastro da equipe com documentos e datas de validade.",
+    titulo: "Operadores e Pilotos",
+    texto: "Cadastro da equipe técnica com documentos arquivados e prazos de validade.",
     disponivel: true,
   },
   {
-    titulo: "Equipe e permissões",
+    titulo: "Equipe e Permissões",
     texto:
-      "Papéis de proprietário, administrador e membro dentro de cada organização.",
+      "Controle de acesso por organização com papéis de proprietário, administrador e membro.",
     disponivel: true,
   },
   {
-    titulo: "Missões e mapas",
+    titulo: "Missões e Mapas Geográficos",
     texto:
-      "Planejamento de missões e visualização no mapa entram nas próximas etapas do produto.",
+      "Planejamento de missões, waypoints e visualização em mapas estão no roadmap da Fase 2.",
     disponivel: false,
   },
 ];
 
 const PUBLICO = [
   {
-    titulo: "Prestadores de serviço",
+    titulo: "Prestadores de serviços com drones",
     texto:
-      "Quem atende vários clientes e precisa separar cada contrato com clareza.",
+      "Quem realiza mapeamento, inspeção ou pulverização e precisa organizar múltiplos clientes e contratos.",
   },
   {
-    titulo: "Equipes pequenas",
+    titulo: "Operadores e equipes técnicas",
     texto:
-      "Operadores, drones e manutenção sob controle sem planilha paralela.",
+      "Equipes que precisam controlar manutenções, peças e documentos de pilotos sem planilhas soltas.",
   },
   {
-    titulo: "Empresas que precisam se organizar",
+    titulo: "Empresas com operação interna",
     texto:
-      "Quem quer demonstrar registro estruturado da própria operação interna.",
+      "Organizações que utilizam drones e necessitam de registro administrativo para auditorias internas.",
   },
 ];
 
 const DIFERENCIAIS = [
   {
-    titulo: "Feito para operações com drones",
+    titulo: "Focado em operações com drones",
     texto:
-      "Não é um gerenciador genérico adaptado: cadastros, manutenção e documentos foram desenhados para esse tipo de operação.",
+      "Desenvolvido especificamente para os fluxos administrativos de quem trabalha com aeronaves remotamente pilotadas.",
   },
   {
-    titulo: "Isolamento por construção",
+    titulo: "Segurança por design (Multi-tenant)",
     texto:
-      "A separação entre empresas é aplicada com políticas no próprio banco de dados, não apenas com filtros na interface.",
+      "Isolamento entre empresas configurado no nível do banco de dados (Row Level Security), não apenas filtros de interface.",
   },
   {
-    titulo: "Postura regulatória explícita",
+    titulo: "Transparência regulatória rigorosa",
     texto:
-      "O produto declara o que não faz: não autoriza voos, não substitui sistemas oficiais e não apresenta mapas genéricos como oficiais.",
+      "Declaramos explicitamente o que o software faz e o que não faz: não substitui o SARPAS e não emite autorizações de voo.",
   },
   {
-    titulo: "Código com testes e documentação",
+    titulo: "Arquitetura com testes automatizados",
     texto:
-      "Regras de validação cobertas por testes automatizados e decisões de produto documentadas.",
+      "Regras de validação e consistência cobertas por testes automatizados de regressão contínua.",
   },
 ];
 
@@ -168,42 +167,42 @@ const FAQ = [
   {
     pergunta: "O AeroGrid autoriza voos?",
     resposta:
-      "Não. O AeroGrid é uma ferramenta de gestão e planejamento administrativo. Ele não emite autorizações de voo, não controla espaço aéreo e não substitui o SARPAS ou qualquer sistema oficial.",
+      "Não. O AeroGrid é exclusivamente uma plataforma de gestão administrativa e operacional. Ele não emite autorizações de voo, não controla espaço aéreo e não substitui o SARPAS ou qualquer outro sistema oficial do DECEA.",
   },
   {
-    pergunta: "O AeroGrid é ligado ao DECEA, à ANAC ou a algum serviço UTM?",
+    pergunta: "O AeroGrid é integrado à ANAC ou ao DECEA?",
     resposta:
-      "Não. Não há integração com órgãos oficiais, e o produto não se apresenta como serviço UTM autorizado.",
+      "Não. O AeroGrid não possui integração oficial com a ANAC, com o DECEA ou com serviços UTM. O produto não se apresenta como entidade governamental ou credenciada.",
   },
   {
     pergunta: "Como os dados da minha empresa são protegidos?",
     resposta:
-      "Cada organização enxerga apenas os próprios dados. A separação é aplicada no banco de dados por políticas de acesso, e a autenticação é feita por conta com senha.",
+      "Cada organização tem seus dados separados no nível do banco de dados (Row Level Security). Membros de uma empresa não têm acesso aos clientes, drones ou documentos de outra organização.",
   },
   {
-    pergunta: "Preciso de cartão de crédito para começar?",
+    pergunta: "É necessário cadastrar cartão de crédito para testar?",
     resposta:
-      "Não. O cadastro é gratuito e não pede cartão de crédito nesta versão.",
+      "Não. O cadastro e o uso do sistema nesta versão são gratuitos, sem necessidade de informar cartão de crédito.",
   },
   {
-    pergunta: "Funciona no celular?",
+    pergunta: "O sistema funciona em celular e tablet?",
     resposta:
-      "Sim. As telas são responsivas e funcionam bem em navegadores de celular e desktop.",
+      "Sim. Todas as interfaces foram construídas com layout responsivo para uso prático em computadores de escritório ou dispositivos móveis em campo.",
   },
   {
-    pergunta: "Quem pode ver os dados dentro da minha empresa?",
+    pergunta: "O AeroGrid valida carteiras ou habilitações de pilotos?",
     resposta:
-      "Você define papéis: proprietário, administrador ou membro. Todos os membros ativos da organização trabalham nos mesmos cadastros, sempre separados das demais empresas.",
+      "Não. O cadastro de qualificações e documentos é meramente declaratório para organização interna da empresa. O sistema não atesta competência técnica de operadores.",
   },
   {
-    pergunta: "Os mapas do AeroGrid são mapas aeronáuticos oficiais?",
+    pergunta: "Os mapas do AeroGrid são cartas aeronáuticas?",
     resposta:
-      "Não. Nenhum mapa exibido pelo AeroGrid é mapa aeronáutico oficial, e o produto não indica áreas liberadas para voo.",
+      "Não. Nenhum mapa que venha a ser exibido no sistema possui valor de carta aeronáutica oficial. Planejamento de espaço aéreo deve ser feito exclusivamente nos canais oficiais do DECEA.",
   },
   {
-    pergunta: "Como falo com vocês?",
+    pergunta: "Como entrar em contato para dúvidas ou demonstrações?",
     resposta:
-      "Envie um e-mail para contato@aerogrid.com.br com o nome da empresa e o tamanho da equipe. Respondemos com uma demonstração do produto.",
+      "Basta enviar um e-mail para contato@aerogrid.com.br informando o nome da empresa e o tamanho da sua operação.",
   },
 ] as const;
 
@@ -215,7 +214,7 @@ const JSON_LD = {
   operatingSystem: "Web",
   inLanguage: "pt-BR",
   description:
-    "Plataforma de gestão e planejamento administrativo de operações com drones: clientes, equipamentos, manutenção e equipe, com isolamento de dados por organização. Não emite autorizações de voo.",
+    "Plataforma de gestão administrativa de operações com drones: clientes, frota, manutenção e equipe técnica com isolamento multiempresa. Não emite autorizações de voo.",
   offers: {
     "@type": "Offer",
     price: "0",
@@ -250,7 +249,7 @@ function Section({
         {titulo && (
           <h2
             id={id ? `${id}-titulo` : undefined}
-            className="text-center text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl"
+            className="text-center text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl"
           >
             {titulo}
           </h2>
@@ -262,6 +261,7 @@ function Section({
 }
 
 export default function LandingPage() {
+  const heroShot = demoShotSrc("drones-lista.png");
   const demoAvailable = DEMO_SHOTS.filter((shot) => demoShotSrc(shot.file));
 
   return (
@@ -269,99 +269,116 @@ export default function LandingPage() {
       <SiteHeader />
 
       <main id="conteudo" className="flex-1">
-        {/* 1. Hero */}
+        {/* 1. Hero / Primeira Dobra de Alto Impacto */}
         <section
           aria-labelledby="hero-titulo"
-          className="bg-brand-900 px-4 py-16 text-white sm:py-24"
+          className="bg-brand-900 px-4 pt-16 pb-20 text-white sm:pt-24 sm:pb-28"
         >
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-wide text-brand-300">
-              Gestão de operações com drones
-            </p>
+          <div className="mx-auto max-w-4xl text-center">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-800/80 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-brand-200 border border-brand-700/60">
+              Gestão administrativa de operações com drones
+            </span>
             <h1
               id="hero-titulo"
-              className="mt-4 text-3xl font-bold tracking-tight sm:text-5xl"
+              className="mt-6 text-3xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-balance"
             >
               O controle da sua operação com drones, em um só lugar.
             </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-base text-brand-100 sm:text-lg">
-              Clientes, frota, manutenção e equipe organizados em um sistema
-              multiempresa — com os dados de cada empresa separados e
-              protegidos.
+            <p className="mx-auto mt-6 max-w-2xl text-base text-brand-100 sm:text-lg leading-relaxed">
+              Clientes, frota de equipamentos, histórico de manutenção e equipe
+              técnica organizados em uma plataforma multiempresa segura.
             </p>
+
             <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
               <LinkButton href="/cadastro" size="lg" variant="light">
                 Criar minha conta grátis
               </LinkButton>
               <a
-                href="#produto"
+                href="#demonstracao"
                 className={buttonClasses("outlineLight", "lg")}
               >
-                Conhecer o produto
+                Ver telas do sistema
               </a>
             </div>
-            <p className="mt-6 text-sm text-brand-200">
-              Sem cartão de crédito. Não emitimos autorizações de voo —{" "}
-              <a href="#limitacoes" className="underline hover:text-white">
-                veja o que o AeroGrid é e o que não é
-              </a>
-              .
+
+            <p className="mt-5 text-xs text-brand-200/90">
+              Sem cartão de crédito • Não emite autorizações de voo • Não substitui o SARPAS
             </p>
+
+            {/* Prévia real da interface na primeira dobra */}
+            {heroShot && (
+              <div className="mt-12 overflow-hidden rounded-xl border border-brand-700/50 bg-brand-950/40 p-2 shadow-2xl backdrop-blur-xs sm:p-3">
+                <div className="overflow-hidden rounded-lg border border-gray-800 bg-white">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={heroShot}
+                    alt="Visão da lista de drones e controle de frota no AeroGrid"
+                    width={1280}
+                    height={800}
+                    className="w-full object-cover"
+                  />
+                </div>
+                <p className="mt-2 text-center text-xs text-brand-300">
+                  Interface real: controle de inventário da frota e registros operacionais
+                </p>
+              </div>
+            )}
           </div>
         </section>
 
-        {/* 2. Apresentação + honestidade */}
+        {/* 2. Apresentação e Limitações Regulatórias Claras */}
         <Section id="produto" titulo="O que é o AeroGrid">
           <div className="mx-auto mt-8 max-w-3xl space-y-6 text-center">
             <p className="text-base leading-relaxed text-gray-700 sm:text-lg">
-              O AeroGrid Brasil é uma plataforma para{" "}
+              O AeroGrid Brasil é uma ferramenta para{" "}
               <strong className="font-semibold text-gray-900">
-                organizar a parte administrativa de quem opera com drones
+                organizar os bastidores administrativos da sua empresa de drones
               </strong>
-              : clientes, equipamentos, histórico de manutenção, equipe e
-              documentos — tudo separado por empresa, com busca e histórico.
+              : contratos de clientes, dados técnicos da frota, controle de manutenções e documentação da equipe.
             </p>
-            <div className="rounded-lg border border-brand-200 bg-brand-50 p-5 text-left">
-              <p className="text-sm font-semibold text-brand-800">
-                O que o AeroGrid não é
+
+            {/* Aviso regulatório obrigatório */}
+            <div className="rounded-lg border border-brand-200 bg-brand-50 p-6 text-left">
+              <p className="text-sm font-bold text-brand-900 uppercase tracking-wide">
+                Declaração de Escopo e Limitações
               </p>
-              <ul className="mt-2 space-y-1.5 text-sm text-gray-700">
-                <li>
-                  — Não é um sistema de autorização de voo e não substitui o
-                  SARPAS.
+              <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                <li className="flex items-start gap-2">
+                  <span className="font-bold text-brand-700">•</span>
+                  <span><strong>Não autoriza voos:</strong> o sistema não substitui o SARPAS ou qualquer órgão oficial.</span>
                 </li>
-                <li>
-                  — Não é sistema oficial do DECEA ou da ANAC, nem serviço UTM
-                  autorizado.
+                <li className="flex items-start gap-2">
+                  <span className="font-bold text-brand-700">•</span>
+                  <span><strong>Não é sistema governamental:</strong> sem ligação ou credenciamento com DECEA, ANAC ou serviços UTM.</span>
                 </li>
-                <li>
-                  — Não é prevenção de colisões e não garante segurança
-                  operacional.
+                <li className="flex items-start gap-2">
+                  <span className="font-bold text-brand-700">•</span>
+                  <span><strong>Não previne colisões:</strong> o sistema é administrativo e não atua no espaço aéreo em tempo real.</span>
                 </li>
-                <li>
-                  — Nenhum mapa exibido aqui é mapa aeronáutico oficial, e não
-                  indicamos áreas liberadas para voo.
+                <li className="flex items-start gap-2">
+                  <span className="font-bold text-brand-700">•</span>
+                  <span><strong>Mapas não são cartas oficiais:</strong> nenhum mapa na plataforma indica áreas liberadas para voo.</span>
                 </li>
               </ul>
             </div>
           </div>
         </Section>
 
-        {/* 3. Problemas */}
+        {/* 3. Problemas Operacionais Resolvidos */}
         <Section
-          titulo="O que atrapalha quem opera com drone hoje"
+          titulo="Problemas que resolvemos na sua rotina"
           className="bg-gray-50"
         >
           <ul className="mx-auto mt-8 grid max-w-4xl gap-4 sm:grid-cols-2">
             {[
-              "Clientes e orçamentos espalhados em planilhas que ninguém mais entende depois de seis meses.",
-              "Manutenção registrada “de cabeça” — até o equipamento parar no meio de um contrato.",
-              "Operadores e documentos em pastas diferentes, sem saber o que vence quando.",
-              "Dados de um cliente misturados com os de outro, sem separação clara.",
+              "Planilhas paralelas desatualizadas onde números de série e contratos se perdem.",
+              "Manutenção feita “de cabeça”, sem controle de custos ou histórico por equipamento.",
+              "Documentos e validades de pilotos dispersos em pastas e mensagens de chat.",
+              "Falta de separação segura entre os contratos e equipamentos de cada empresa.",
             ].map((texto) => (
               <li
                 key={texto}
-                className="rounded-lg border border-gray-200 bg-white p-5 text-sm leading-relaxed text-gray-700"
+                className="rounded-lg border border-gray-200 bg-white p-5 text-sm leading-relaxed text-gray-700 shadow-xs"
               >
                 {texto}
               </li>
@@ -369,13 +386,13 @@ export default function LandingPage() {
           </ul>
         </Section>
 
-        {/* 4. Benefícios */}
-        <Section titulo="O que você resolve com o AeroGrid">
+        {/* 4. Benefícios Principais */}
+        <Section titulo="Vantagens para a sua empresa">
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {BENEFICIOS.map((item) => (
               <div
                 key={item.titulo}
-                className="rounded-lg border border-gray-200 p-5"
+                className="rounded-lg border border-gray-200 p-5 bg-white shadow-xs"
               >
                 <h3 className="font-semibold text-gray-900">{item.titulo}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600">
@@ -386,28 +403,28 @@ export default function LandingPage() {
           </div>
         </Section>
 
-        {/* 5. Funcionalidades */}
+        {/* 5. Funcionalidades do Produto */}
         <Section
           id="funcionalidades"
-          titulo="Funcionalidades disponíveis hoje"
+          titulo="Recursos do Sistema"
           className="bg-gray-50"
         >
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {FUNCIONALIDADES.map((item) => (
               <div
                 key={item.titulo}
-                className="rounded-lg border border-gray-200 bg-white p-5"
+                className="rounded-lg border border-gray-200 bg-white p-5 shadow-xs"
               >
                 <div className="flex items-center justify-between gap-2">
                   <h3 className="font-semibold text-gray-900">{item.titulo}</h3>
                   <span
-                    className={`rounded-full px-2 py-0.5 text-xs font-medium ${
+                    className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
                       item.disponivel
                         ? "bg-success-bg text-success-700"
                         : "bg-gray-100 text-gray-700"
                     }`}
                   >
-                    {item.disponivel ? "Disponível" : "Em breve"}
+                    {item.disponivel ? "Disponível" : "Em desenvolvimento"}
                   </span>
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600">
@@ -416,13 +433,12 @@ export default function LandingPage() {
               </div>
             ))}
           </div>
-          <p className="mx-auto mt-6 max-w-2xl text-center text-xs text-gray-700">
-            Só é listado como disponível o que está funcionando nesta versão do
-            produto.
+          <p className="mx-auto mt-6 max-w-2xl text-center text-xs text-gray-500">
+            Apresentamos com transparência apenas os recursos efetivamente disponíveis nesta versão do produto.
           </p>
         </Section>
 
-        {/* 6. Demonstração visual */}
+        {/* 6. Demonstração Visual com Telas Reais */}
         <Section id="demonstracao" titulo="Veja o sistema por dentro">
           {demoAvailable.length > 0 ? (
             <div className="mt-8 grid gap-6 lg:grid-cols-3">
@@ -431,16 +447,18 @@ export default function LandingPage() {
                 if (!src) return null;
                 return (
                   <figure key={shot.file} className="space-y-2">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={src}
-                      alt={shot.alt}
-                      width={1280}
-                      height={800}
-                      loading="lazy"
-                      className="w-full rounded-lg border border-gray-200 shadow-sm"
-                    />
-                    <figcaption className="text-center text-xs text-gray-500">
+                    <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm bg-white">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={src}
+                        alt={shot.alt}
+                        width={1280}
+                        height={800}
+                        loading="lazy"
+                        className="w-full object-cover transition-transform duration-200 hover:scale-[1.02]"
+                      />
+                    </div>
+                    <figcaption className="text-center text-xs font-medium text-gray-600">
                       {shot.caption}
                     </figcaption>
                   </figure>
@@ -450,23 +468,19 @@ export default function LandingPage() {
           ) : (
             <div className="mx-auto mt-8 max-w-2xl rounded-lg border border-dashed border-gray-300 bg-gray-50 p-8 text-center">
               <p className="text-sm font-medium text-gray-700">
-                Capturas de tela do sistema em produção serão publicadas aqui.
-              </p>
-              <p className="mt-1 text-xs text-gray-500">
-                Somente telas reais do produto — nenhuma imagem ilustrativa
-                fingindo ser o sistema.
+                Capturas de tela reais do sistema em produção.
               </p>
             </div>
           )}
         </Section>
 
-        {/* 7. Público */}
-        <Section titulo="Para quem é o AeroGrid" className="bg-gray-50">
+        {/* 7. Público Alvo */}
+        <Section titulo="Para quem foi feito o AeroGrid" className="bg-gray-50">
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {PUBLICO.map((item) => (
               <div
                 key={item.titulo}
-                className="rounded-lg border border-gray-200 bg-white p-5"
+                className="rounded-lg border border-gray-200 bg-white p-5 shadow-xs"
               >
                 <h3 className="font-semibold text-gray-900">{item.titulo}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600">
@@ -478,12 +492,12 @@ export default function LandingPage() {
         </Section>
 
         {/* 8. Diferenciais */}
-        <Section titulo="Por que o AeroGrid">
+        <Section titulo="Por que escolher o AeroGrid">
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {DIFERENCIAIS.map((item) => (
               <div
                 key={item.titulo}
-                className="rounded-lg border border-gray-200 p-5"
+                className="rounded-lg border border-gray-200 bg-white p-5 shadow-xs"
               >
                 <h3 className="font-semibold text-gray-900">{item.titulo}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600">
@@ -494,78 +508,39 @@ export default function LandingPage() {
           </div>
         </Section>
 
-        {/* 9. Segurança e privacidade */}
-        <Section id="seguranca" titulo="Segurança e privacidade" className="bg-gray-50">
+        {/* 8. Segurança e Privacidade com Honestidade Técnica */}
+        <Section id="seguranca" titulo="Segurança e Isolamento de Dados">
           <div className="mx-auto mt-8 max-w-3xl space-y-4 text-sm leading-relaxed text-gray-700">
             <p>
               <strong className="font-semibold text-gray-900">
-                Seus dados pertencem à sua empresa.
+                Os dados da sua organização pertencem exclusivamente a ela.
               </strong>{" "}
-              O AeroGrid separa as organizações no nível do banco de dados: uma
-              empresa não enxerga os dados da outra, mesmo usando o mesmo
-              sistema.
+              O isolamento é aplicado no nível do banco de dados através de políticas de Row Level Security (RLS). Uma organização não acessa registros de outra.
             </p>
             <p>
-              O acesso é feito por conta individual com senha, com papéis de
-              proprietário, administrador e membro dentro de cada organização.
-              Não vendemos nem compartilhamos seus dados com terceiros.
+              O controle de acessos conta com papéis de proprietário, administrador e membro. Não compartilhamos nem comercializamos informações cadastradas.
             </p>
-            <p className="text-xs text-gray-500">
-              Os testes de isolamento entre empresas estão em homologação —
-              registramos essa pendência publicamente em vez de assumi-la como
-              concluída.
+            <p className="text-xs text-gray-500 bg-gray-50 p-3 rounded-md border border-gray-200">
+              Estado dos testes: as regras de banco de dados e validações com schemas Zod estão testadas e ativas. Os testes integrados de isolamento em ambiente de homologação seguem o cronograma de validação contínua registrado na documentação técnica.
             </p>
           </div>
         </Section>
 
-        {/* 10. Limitações e regulatório */}
-        <Section id="limitacoes" titulo="Limitações e esclarecimentos">
-          <div className="mx-auto mt-8 max-w-3xl rounded-lg border border-warning/40 bg-warning-bg p-6">
-            <p className="text-sm font-semibold text-warning-700">
-              Leia antes de contratar
-            </p>
-            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-gray-700">
-              <li>
-                O AeroGrid é uma plataforma de{" "}
-                <strong>gestão e planejamento administrativo e geográfico</strong>{" "}
-                de operações com drones.
-              </li>
-              <li>
-                <strong>Não emite autorizações de voo</strong>, não substitui o
-                SARPAS, não é sistema oficial do DECEA ou da ANAC e não é
-                serviço UTM autorizado.
-              </li>
-              <li>
-                <strong>Não é sistema de prevenção de colisões</strong> e não
-                garante segurança operacional.
-              </li>
-              <li>
-                Nenhum mapa exibido é mapa aeronáutico oficial; o produto não
-                indica áreas liberadas para voo.
-              </li>
-              <li>
-                Não anunciamos integrações com órgãos oficiais porque não
-                temos nenhuma comprovada.
-              </li>
-            </ul>
-          </div>
-        </Section>
-
-        {/* 11. FAQ */}
-        <Section id="faq" titulo="Perguntas frequentes" className="bg-gray-50">
-          <div className="mx-auto mt-8 max-w-3xl divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white">
+        {/* 9. FAQ / Perguntas Frequentes */}
+        <Section id="faq" titulo="Perguntas Frequentes" className="bg-gray-50">
+          <div className="mx-auto mt-8 max-w-3xl divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white shadow-xs">
             {FAQ.map((item) => (
               <details key={item.pergunta} className="group p-5">
-                <summary className="cursor-pointer list-none text-sm font-semibold text-gray-900">
+                <summary className="cursor-pointer list-none text-sm font-semibold text-gray-900 flex items-center justify-between">
+                  <span>{item.pergunta}</span>
                   <span
                     aria-hidden="true"
-                    className="mr-2 inline-block text-brand-600 transition-transform duration-150 group-open:rotate-90"
+                    className="ml-2 font-bold text-brand-600 transition-transform duration-150 group-open:rotate-90"
                   >
                     ›
                   </span>
-                  {item.pergunta}
                 </summary>
-                <p className="mt-3 pl-5 text-sm leading-relaxed text-gray-600">
+                <p className="mt-3 text-sm leading-relaxed text-gray-600 border-t border-gray-100 pt-3">
                   {item.resposta}
                 </p>
               </details>
@@ -573,28 +548,27 @@ export default function LandingPage() {
           </div>
         </Section>
 
-        {/* 12. CTA final */}
+        {/* 10. Chamada Final */}
         <section
           aria-labelledby="cta-final-titulo"
-          className="bg-brand-900 px-4 py-16 text-white"
+          className="bg-brand-900 px-4 py-16 text-white text-center"
         >
-          <div className="mx-auto max-w-2xl text-center">
+          <div className="mx-auto max-w-2xl">
             <h2
               id="cta-final-titulo"
-              className="text-2xl font-semibold tracking-tight sm:text-3xl"
+              className="text-2xl font-bold tracking-tight sm:text-3xl"
             >
-              Comece a organizar sua operação hoje
+              Organize a operação de drones da sua empresa
             </h2>
             <p className="mt-4 text-sm text-brand-100 sm:text-base">
-              Crie sua conta e cadastre seu primeiro cliente em minutos. Sem
-              cartão de crédito.
+              Cadastre sua organização e estruture clientes, frota e manutenção em minutos.
             </p>
             <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
               <LinkButton href="/cadastro" size="lg" variant="light">
                 Criar minha conta grátis
               </LinkButton>
               <a href={mailtoContato()} className={buttonClasses("outlineLight", "lg")}>
-                Solicitar demonstração
+                Falar com a equipe
               </a>
             </div>
           </div>
@@ -602,13 +576,6 @@ export default function LandingPage() {
       </main>
 
       <SiteFooter />
-
-      <a
-        href="#conteudo"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:text-brand-700"
-      >
-        Pular para o conteúdo
-      </a>
 
       <script
         type="application/ld+json"

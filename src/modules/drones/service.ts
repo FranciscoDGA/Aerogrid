@@ -23,6 +23,11 @@ export type MaintenanceRecord = {
   createdAt: string;
 };
 
+export type RecentMaintenanceRecord = MaintenanceRecord & {
+  droneManufacturer?: string;
+  droneModel?: string;
+};
+
 const DRONE_COLUMNS =
   "id, manufacturer, model, serial_number, status, specs, created_at, updated_at";
 
@@ -108,6 +113,44 @@ export async function listMaintenance(droneId: string): Promise<MaintenanceRecor
     description: row.description,
     cost: row.cost,
     createdAt: row.created_at,
+  }));
+}
+
+export async function listRecentMaintenance(
+  limit = 5,
+): Promise<RecentMaintenanceRecord[]> {
+  const supabase = await createClient();
+  await requireOrg();
+
+  const { data, error } = await supabase
+    .from("maintenance_records")
+    .select("id, drone_id, performed_at, description, cost, created_at, drones(manufacturer, model)")
+    .order("performed_at", { ascending: false })
+    .limit(limit);
+
+  if (error) {
+    return [];
+  }
+
+  type RowWithDrone = {
+    id: string;
+    drone_id: string;
+    performed_at: string;
+    description: string;
+    cost: string | null;
+    created_at: string;
+    drones?: { manufacturer?: string; model?: string } | null;
+  };
+
+  return ((data as unknown as RowWithDrone[]) ?? []).map((row) => ({
+    id: row.id,
+    droneId: row.drone_id,
+    performedAt: row.performed_at,
+    description: row.description,
+    cost: row.cost,
+    createdAt: row.created_at,
+    droneManufacturer: row.drones?.manufacturer,
+    droneModel: row.drones?.model,
   }));
 }
 
