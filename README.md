@@ -6,8 +6,9 @@ Plataforma SaaS para **gestão e planejamento de operações com drones** — cl
 
 ## Estado atual
 
-- **Funcional nesta versão:** autenticação (cadastro, login, recuperação de senha), criação de organização (onboarding) e painel com dados reais da organização.
-- **Próximas etapas:** clientes, drones, operadores, missões, mapas (com a Skill 05) e documentos.
+- **Funcional nesta versão:** autenticação (cadastro, login, recuperação de senha), criação de organização (onboarding), painel com dados reais e **CRUDs de clientes, drones (com histórico de manutenção) e operadores (com documentos/validades)** — listas com busca, criação, detalhe, edição e exclusão lógica com confirmação.
+- **Próximas etapas:** missões, mapas (Skill 05), documentos/checklists/relatórios, auditoria de segurança (Skill 06).
+- **Testes:** unitários (schemas Zod) executados com `npm test`; testes de RLS/ integração **ainda não executados** — exigem Docker + Supabase CLI (ver [docs/arquitetura/09-desenvolvimento-local.md](docs/arquitetura/09-desenvolvimento-local.md)).
 
 ## Documentação
 

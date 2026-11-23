@@ -146,9 +146,9 @@ export default async function PainelPage() {
         </h2>
         <div className="rounded-lg border border-gray-200 bg-white p-6 text-sm text-gray-700">
           <p>
-            Esta é a primeira versão do AeroGrid: autenticação e organização
-            funcionando. Drones, operadores, clientes e missões entram nas
-            próximas etapas.
+            Esta versão tem autenticação, organização e cadastros de clientes,
+            drones e operadores funcionando. Missões, mapas e documentos entram
+            nas próximas etapas.
           </p>
         </div>
       </section>

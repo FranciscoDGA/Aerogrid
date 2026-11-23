@@ -1,9 +1,9 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 
-type Variant = "primary" | "secondary" | "danger" | "ghost";
-type Size = "sm" | "md" | "lg";
+export type ButtonVariant = "primary" | "secondary" | "danger" | "ghost";
+export type ButtonSize = "sm" | "md" | "lg";
 
-const variantClasses: Record<Variant, string> = {
+const variantClasses: Record<ButtonVariant, string> = {
   primary:
     "bg-brand-600 text-white hover:bg-brand-700 disabled:bg-brand-300",
   secondary:
@@ -12,16 +12,24 @@ const variantClasses: Record<Variant, string> = {
   ghost: "text-gray-700 hover:bg-gray-100 disabled:text-gray-300",
 };
 
-const sizeClasses: Record<Size, string> = {
+const sizeClasses: Record<ButtonSize, string> = {
   sm: "h-8 px-3 text-sm",
   md: "h-10 px-4 text-sm",
   // lg/mobile: alvo de toque ≥ 44px (doc 09, §3)
   lg: "h-11 px-5 text-base",
 };
 
+/** Classes reutilizáveis por <button> e LinkButton (mesmo visual). */
+export function buttonClasses(
+  variant: ButtonVariant = "primary",
+  size: ButtonSize = "md",
+): string {
+  return `inline-flex items-center justify-center gap-2 rounded-md font-medium transition-colors duration-150 disabled:cursor-not-allowed ${variantClasses[variant]} ${sizeClasses[size]}`;
+}
+
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: Variant;
-  size?: Size;
+  variant?: ButtonVariant;
+  size?: ButtonSize;
   loading?: boolean;
   children: ReactNode;
 };
@@ -41,7 +49,7 @@ export function Button({
       type={type}
       disabled={disabled || loading}
       aria-busy={loading || undefined}
-      className={`inline-flex items-center justify-center gap-2 rounded-md font-medium transition-colors duration-150 disabled:cursor-not-allowed ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
+      className={`${buttonClasses(variant, size)} ${className}`}
       {...rest}
     >
       {loading && (

@@ -1,0 +1,17 @@
+/** Estado de carregamento da listagem de clientes (doc 05 §3 — skeleton). */
+export default function ClientesLoading() {
+  return (
+    <div aria-busy="true" aria-label="Carregando clientes">
+      <div className="mb-6 h-8 w-40 animate-pulse rounded bg-gray-200" />
+      <div className="mb-4 h-10 w-full max-w-md animate-pulse rounded bg-gray-200" />
+      <div className="space-y-3">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <div
+            key={i}
+            className="h-14 animate-pulse rounded-lg bg-gray-200"
+          />
+        ))}
+      </div>
+    </div>
+  );
+}

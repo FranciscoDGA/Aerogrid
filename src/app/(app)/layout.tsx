@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import { Logo } from "@/components/brand/logo";
+import { AppNav } from "@/components/nav/app-nav";
 import { logout } from "@/modules/auth/actions";
 import { createClient } from "@/lib/supabase/server";
 import { getCurrentOrganization } from "@/modules/organizations/service";
@@ -53,6 +54,8 @@ export default async function AppLayout({
           </div>
         </div>
       </header>
+
+      <AppNav />
 
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         {children}
