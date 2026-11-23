@@ -62,12 +62,19 @@ export const createMaintenanceSchema = z.object({
     .trim()
     .min(2, "Descreva a manutenção.")
     .max(2000, "A descrição pode ter no máximo 2000 caracteres."),
-  // preprocess: campo vazio chega como "" e vira null antes da validação numérica
-  // (z.coerce.number() sozinho converteria null em 0)
+  // FormData sempre entrega STRING — o preprocess converte para número antes
+  // da validação numérica ("" vira null; z.coerce.number() sozinho viraria 0).
+  // Valor não numérico é mantido como está para cair no invalid_type_error
+  // com mensagem em português (nunca "Expected number, received string").
   cost: z.preprocess(
-    (v) => (v === "" || v === undefined ? null : v),
+    (v) => {
+      if (v === null || v === undefined || v === "") return null;
+      if (typeof v === "number") return v;
+      const n = Number(String(v).trim().replace(",", "."));
+      return Number.isNaN(n) ? v : n;
+    },
     z
-      .number()
+      .number({ invalid_type_error: "Custo inválido — informe um número." })
       .min(0, "O custo não pode ser negativo.")
       .max(99999999, "Custo acima do permitido.")
       .nullable(),

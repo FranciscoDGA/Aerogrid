@@ -88,6 +88,37 @@ describe("createMaintenanceSchema", () => {
     if (result.success) expect(result.data.cost).toBeNull();
   });
 
+  it("converte custo string numérica vinda do formulário (FormData)", () => {
+    const result = createMaintenanceSchema.safeParse({
+      ...validMaint,
+      cost: "10.5",
+    });
+    expect(result.success).toBe(true);
+    if (result.success) expect(result.data.cost).toBe(10.5);
+  });
+
+  it("aceita custo string com vírgula decimal (padrão pt-BR)", () => {
+    const result = createMaintenanceSchema.safeParse({
+      ...validMaint,
+      cost: "10,5",
+    });
+    expect(result.success).toBe(true);
+    if (result.success) expect(result.data.cost).toBe(10.5);
+  });
+
+  it("rejeita custo não numérico com mensagem em português", () => {
+    const result = createMaintenanceSchema.safeParse({
+      ...validMaint,
+      cost: "abc",
+    });
+    expect(result.success).toBe(false);
+    if (!result.success) {
+      expect(result.error.issues[0]?.message).toBe(
+        "Custo inválido — informe um número.",
+      );
+    }
+  });
+
   it("rejeita custo negativo", () => {
     const result = createMaintenanceSchema.safeParse({
       ...validMaint,
