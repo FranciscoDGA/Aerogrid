@@ -315,6 +315,8 @@ export default function LandingPage() {
                     alt="Visão da lista de drones e controle de frota no AeroGrid"
                     width={1280}
                     height={800}
+                    fetchPriority="high"
+                    decoding="async"
                     className="w-full object-cover"
                   />
                 </div>
